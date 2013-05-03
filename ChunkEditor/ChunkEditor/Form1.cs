@@ -20,5 +20,23 @@ namespace ChunkEditor
         {
 
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutChunkEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutWindow about = new AboutWindow();
+            DialogResult dialogResult = about.ShowDialog();
+
+            about.Dispose();
+        }
     }
 }
