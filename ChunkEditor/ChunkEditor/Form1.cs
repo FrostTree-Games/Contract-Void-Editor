@@ -16,6 +16,9 @@ namespace ChunkEditor
             InitializeComponent();
 
             drawPane.Click += new System.EventHandler(this.drawPane_Click);
+
+            brushSelection.Text = "Add Tile";
+            Program.ProgramBrushState = Program.BrushState.AddTile;
         }
 
         private void drawPane_Click(object sender, EventArgs e)
@@ -23,7 +26,17 @@ namespace ChunkEditor
             int xPos = (int)(Program.RoomWidth*((this.PointToClient(Cursor.Position).X - 11) / ((float)drawPane.Bounds.Width)));
             int yPos = (int)(Program.RoomHeight*(this.PointToClient(Cursor.Position).Y - 38)/((float)drawPane.Bounds.Height));
 
-            Program.room[xPos % Program.RoomWidth, yPos % Program.RoomHeight] = 1;
+            switch (Program.ProgramBrushState)
+            {
+                case Program.BrushState.AddTile:
+                    Program.room[xPos % Program.RoomWidth, yPos % Program.RoomHeight] = 1;
+                    break;
+                case Program.BrushState.RemoveTile:
+                    Program.room[xPos % Program.RoomWidth, yPos % Program.RoomHeight] = 0;
+                    break;
+                default:
+                    break;
+            }
 
             drawPane.Invalidate();
         }
@@ -96,6 +109,26 @@ namespace ChunkEditor
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (brushSelection.Text)
+            {
+                case "Add Tile":
+                    Program.ProgramBrushState = Program.BrushState.AddTile;
+                    break;
+                case "Remove Tile":
+                    Program.ProgramBrushState = Program.BrushState.RemoveTile;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

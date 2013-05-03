@@ -21,11 +21,21 @@ namespace ChunkEditor
             Application.Run(new Form1());
         }
 
+        public enum BrushState
+        {
+            InvalidState = -1,
+            AddTile = 1,
+            RemoveTile = 2,
+        }
+
         private static int roomWidth = 16;
         private static int roomHeight = 16;
         public static int RoomWidth { get { return roomWidth; } }
         public static int RoomHeight { get { return roomHeight; } }
 
         public static int[,] room;
+
+        private static BrushState programBrushState = BrushState.AddTile;
+        public static BrushState ProgramBrushState { get { return programBrushState; } set { programBrushState = value; } }
     }
 }
