@@ -43,5 +43,34 @@ namespace ChunkEditor
         {
             Close();
         }
+
+        private void drawPane_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            float tileWidth = e.ClipRectangle.Width / (float)Program.RoomWidth;
+            float tileHeight = e.ClipRectangle.Height / (float)Program.RoomHeight;
+            Pen p = new Pen(System.Drawing.Color.Blue);
+            Brush b = new SolidBrush(Color.CornflowerBlue);
+
+            for (int i = 0; i < Program.room.GetLength(0); i++)
+            {
+                for (int j = 0; j < Program.room.GetLength(1); j++)
+                {
+                    Rectangle rect = new Rectangle((int)(i * tileWidth), (int)(j * tileHeight), (int)tileWidth, (int)tileHeight);
+                    
+                    if (Program.room[i, j] == 0)
+                    {
+                        g.DrawRectangle(p, rect);
+                    }
+                    else
+                    {
+                        g.FillRectangle(b, rect);
+                    }
+                }
+            }
+
+            b.Dispose();
+            p.Dispose();
+        }
     }
 }
