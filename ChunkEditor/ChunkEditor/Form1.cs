@@ -14,6 +14,18 @@ namespace ChunkEditor
         public Form1()
         {
             InitializeComponent();
+
+            drawPane.Click += new System.EventHandler(this.drawPane_Click);
+        }
+
+        private void drawPane_Click(object sender, EventArgs e)
+        {
+            int xPos = (int)(Program.RoomWidth*((this.PointToClient(Cursor.Position).X - 11) / ((float)drawPane.Bounds.Width)));
+            int yPos = (int)(Program.RoomHeight*(this.PointToClient(Cursor.Position).Y - 38)/((float)drawPane.Bounds.Height));
+
+            Program.room[xPos % Program.RoomWidth, yPos % Program.RoomHeight] = 1;
+
+            drawPane.Invalidate();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -71,6 +83,21 @@ namespace ChunkEditor
 
             b.Dispose();
             p.Dispose();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
