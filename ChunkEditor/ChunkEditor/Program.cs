@@ -38,4 +38,16 @@ namespace ChunkEditor
         private static BrushState programBrushState = BrushState.AddTile;
         public static BrushState ProgramBrushState { get { return programBrushState; } set { programBrushState = value; } }
     }
+
+    public class EditorChunkAttribute
+    {
+        public string attributeName;
+        public List<string> attributeData;
+
+        public EditorChunkAttribute(string attributeName)
+        {
+            this.attributeName = attributeName;
+            attributeData = new List<string>();
+        }
+    }
 }

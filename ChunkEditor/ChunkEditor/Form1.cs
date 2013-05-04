@@ -132,5 +132,28 @@ namespace ChunkEditor
         {
 
         }
+
+        private void clearMapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Program.room.GetLength(0); i++)
+            {
+                for (int j = 0; j < Program.room.GetLength(1); j++)
+                {
+                    Program.room[i, j] = 0;
+                }
+            }
+
+            drawPane.Invalidate();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
