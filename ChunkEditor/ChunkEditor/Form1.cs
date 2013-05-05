@@ -153,7 +153,54 @@ namespace ChunkEditor
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //
+        }
 
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                attributeNameField.Text = listView1.SelectedItems[0].Text;
+            }
+            catch (Exception)
+            {
+                //whatever
+            }
+        }
+
+        private void addAttributeButton_Click(object sender, EventArgs e)
+        {
+            if (attributeNameField.Text == null)
+            {
+                return;
+            }
+            else if (attributeNameField.Text.Length == 0)
+            {
+                return;
+            }
+
+            foreach (ListViewItem lvi in listView1.Items)
+            {
+                if (lvi.Text == attributeNameField.Text)
+                {
+                    return;
+                }
+            }
+
+            listView1.Items.Add(attributeNameField.Text);
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                if (listView1.Items[i].Text == attributeNameField.Text)
+                {
+                    listView1.Items.RemoveAt(i);
+                    break;
+                }
+            }
         }
     }
 }
