@@ -16,11 +16,6 @@ namespace ChunkManager
             /// Attribute identifier.
             /// </summary>
             public string AttributeName;
-
-            /// <summary>
-            /// Array of strings for each attribute, if necessary.
-            /// </summary>
-            public string[] Metadata;
         }
 
         /// <summary>
