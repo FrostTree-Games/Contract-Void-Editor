@@ -30,6 +30,8 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.drawPane = new System.Windows.Forms.Panel();
+            this.chunkNameBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.addAttributeButton = new System.Windows.Forms.Button();
@@ -48,8 +50,6 @@
             this.clearMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeAttributesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalClearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chunkNameBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -89,6 +89,22 @@
             this.drawPane.Size = new System.Drawing.Size(426, 389);
             this.drawPane.TabIndex = 0;
             this.drawPane.Paint += new System.Windows.Forms.PaintEventHandler(this.drawPane_Paint);
+            // 
+            // chunkNameBox
+            // 
+            this.chunkNameBox.Location = new System.Drawing.Point(84, 45);
+            this.chunkNameBox.Name = "chunkNameBox";
+            this.chunkNameBox.Size = new System.Drawing.Size(229, 20);
+            this.chunkNameBox.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Chunk Name";
             // 
             // groupBox1
             // 
@@ -167,7 +183,8 @@
             this.brushSelection.IntegralHeight = false;
             this.brushSelection.Items.AddRange(new object[] {
             "Add Tile",
-            "Remove Tile"});
+            "Remove Tile",
+            "Flood Fill"});
             this.brushSelection.Location = new System.Drawing.Point(128, 10);
             this.brushSelection.Name = "brushSelection";
             this.brushSelection.Size = new System.Drawing.Size(129, 21);
@@ -254,22 +271,6 @@
             this.totalClearToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.totalClearToolStripMenuItem.Text = "Total Clear";
             this.totalClearToolStripMenuItem.Click += new System.EventHandler(this.totalClearToolStripMenuItem_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Chunk Name";
-            // 
-            // chunkNameBox
-            // 
-            this.chunkNameBox.Location = new System.Drawing.Point(84, 45);
-            this.chunkNameBox.Name = "chunkNameBox";
-            this.chunkNameBox.Size = new System.Drawing.Size(229, 20);
-            this.chunkNameBox.TabIndex = 4;
             // 
             // Form1
             // 

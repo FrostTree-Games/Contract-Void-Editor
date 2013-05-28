@@ -23,6 +23,26 @@ namespace ChunkEditor
             Program.ProgramBrushState = Program.BrushState.AddTile;
         }
 
+        private void floodFill(int[,] room, int x, int y)
+        {
+            if (room == null)
+            {
+                return;
+            }
+
+            if (room[x, y] != 0)
+            {
+                return;
+            }
+
+            room[x, y] = 1;
+
+            if (x > 0) { floodFill(room, x - 1, y); }
+            if (y > 0) { floodFill(room, x, y - 1); }
+            if (x < Program.RoomWidth - 1) { floodFill(room, x + 1, y); }
+            if (y < Program.RoomHeight - 1) { floodFill(room, x, y + 1); }
+        }
+
         private void drawPane_Click(object sender, EventArgs e)
         {
             int xPos = (int)(Program.RoomWidth*((this.PointToClient(Cursor.Position).X - 11) / ((float)drawPane.Bounds.Width)));
@@ -35,6 +55,9 @@ namespace ChunkEditor
                     break;
                 case Program.BrushState.RemoveTile:
                     Program.room[xPos % Program.RoomWidth, yPos % Program.RoomHeight] = 0;
+                    break;
+                case Program.BrushState.FillTool:
+                    floodFill(Program.room, xPos % Program.RoomWidth, yPos % Program.RoomHeight);
                     break;
                 default:
                     break;
@@ -165,6 +188,9 @@ namespace ChunkEditor
                     break;
                 case "Remove Tile":
                     Program.ProgramBrushState = Program.BrushState.RemoveTile;
+                    break;
+                case "Flood Fill":
+                    Program.ProgramBrushState = Program.BrushState.FillTool;
                     break;
                 default:
                     break;

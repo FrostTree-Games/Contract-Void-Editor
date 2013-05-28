@@ -26,6 +26,7 @@ namespace ChunkEditor
             InvalidState = -1,
             AddTile = 1,
             RemoveTile = 2,
+            FillTool = 3,
         }
 
         private static int roomWidth = 16;
