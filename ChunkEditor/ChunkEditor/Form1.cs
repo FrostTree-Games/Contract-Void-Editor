@@ -368,5 +368,64 @@ namespace ChunkEditor
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Program.RoomWidth; i++)
+            {
+                for (int j = 0; j < Program.RoomWidth; j++)
+                {
+                    if (i <= 1 || i >= Program.RoomWidth - 2)
+                    {
+                        Program.room[i, j] = 1;
+                    }
+                    else if (j <= 1 || j >= Program.RoomHeight - 2)
+                    {
+                        Program.room[i, j] = 1;
+                    }
+                }
+            }
+
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                if (listView1.Items[i].Text == "west")
+                {
+                    for (int q = (Program.RoomHeight / 2) - 3; q < (Program.RoomHeight / 2) + 3; q++)
+                    {
+                        Program.room[0, q] = 0;
+                        Program.room[1, q] = 0;
+                    }
+                }
+
+                if (listView1.Items[i].Text == "east")
+                {
+                    for (int q = (Program.RoomHeight / 2) - 3; q < (Program.RoomHeight / 2) + 3; q++)
+                    {
+                        Program.room[Program.RoomWidth - 1, q] = 0;
+                        Program.room[Program.RoomWidth - 2, q] = 0;
+                    }
+                }
+
+                if (listView1.Items[i].Text == "south")
+                {
+                    for (int q = (Program.RoomWidth / 2) - 3; q < (Program.RoomWidth / 2) + 3; q++)
+                    {
+                        Program.room[q, Program.RoomHeight - 1] = 0;
+                        Program.room[q, Program.RoomHeight - 2] = 0;
+                    }
+                }
+
+                if (listView1.Items[i].Text == "north")
+                {
+                    for (int q = (Program.RoomWidth / 2) - 3; q < (Program.RoomWidth / 2) + 3; q++)
+                    {
+                        Program.room[q, 0] = 0;
+                        Program.room[q, 1] = 0;
+                    }
+                }
+            }
+
+            drawPane.Invalidate();
+        }
     }
 }

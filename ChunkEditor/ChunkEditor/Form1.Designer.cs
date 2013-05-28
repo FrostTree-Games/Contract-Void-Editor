@@ -50,6 +50,7 @@
             this.clearMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeAttributesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalClearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,6 +71,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.button2);
             this.splitContainer1.Panel2.Controls.Add(this.chunkNameBox);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
@@ -273,6 +275,16 @@
             this.totalClearToolStripMenuItem.Text = "Total Clear";
             this.totalClearToolStripMenuItem.Click += new System.EventHandler(this.totalClearToolStripMenuItem_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 84);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(110, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Quick Borders";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,6 +335,7 @@
         private System.Windows.Forms.ToolStripMenuItem totalClearToolStripMenuItem;
         private System.Windows.Forms.TextBox chunkNameBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
 
     }
 }
