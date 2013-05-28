@@ -29,8 +29,8 @@ namespace ChunkEditor
             FillTool = 3,
         }
 
-        private static int roomWidth = 16;
-        private static int roomHeight = 16;
+        private static int roomWidth = 24;
+        private static int roomHeight = 24;
         public static int RoomWidth { get { return roomWidth; } }
         public static int RoomHeight { get { return roomHeight; } }
 

@@ -75,8 +75,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.brushSelection);
-            this.splitContainer1.Size = new System.Drawing.Size(781, 419);
-            this.splitContainer1.SplitterDistance = 452;
+            this.splitContainer1.Size = new System.Drawing.Size(944, 518);
+            this.splitContainer1.SplitterDistance = 599;
             this.splitContainer1.TabIndex = 1;
             // 
             // drawPane
@@ -86,7 +86,7 @@
             this.drawPane.Cursor = System.Windows.Forms.Cursors.Cross;
             this.drawPane.Location = new System.Drawing.Point(10, 13);
             this.drawPane.Name = "drawPane";
-            this.drawPane.Size = new System.Drawing.Size(426, 389);
+            this.drawPane.Size = new System.Drawing.Size(576, 493);
             this.drawPane.TabIndex = 0;
             this.drawPane.Paint += new System.Windows.Forms.PaintEventHandler(this.drawPane_Paint);
             // 
@@ -94,7 +94,7 @@
             // 
             this.chunkNameBox.Location = new System.Drawing.Point(84, 45);
             this.chunkNameBox.Name = "chunkNameBox";
-            this.chunkNameBox.Size = new System.Drawing.Size(229, 20);
+            this.chunkNameBox.Size = new System.Drawing.Size(251, 20);
             this.chunkNameBox.TabIndex = 4;
             // 
             // label3
@@ -115,14 +115,14 @@
             this.groupBox1.Controls.Add(this.attributeNameField);
             this.groupBox1.Location = new System.Drawing.Point(3, 226);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(319, 190);
+            this.groupBox1.Size = new System.Drawing.Size(332, 280);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Attributes";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(270, 19);
+            this.button1.Location = new System.Drawing.Point(288, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(38, 23);
             this.button1.TabIndex = 4;
@@ -132,7 +132,7 @@
             // 
             // addAttributeButton
             // 
-            this.addAttributeButton.Location = new System.Drawing.Point(226, 19);
+            this.addAttributeButton.Location = new System.Drawing.Point(244, 19);
             this.addAttributeButton.Name = "addAttributeButton";
             this.addAttributeButton.Size = new System.Drawing.Size(38, 23);
             this.addAttributeButton.TabIndex = 3;
@@ -144,7 +144,7 @@
             // 
             this.listView1.Location = new System.Drawing.Point(9, 48);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(304, 128);
+            this.listView1.Size = new System.Drawing.Size(317, 226);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -163,7 +163,7 @@
             this.attributeNameField.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.attributeNameField.Location = new System.Drawing.Point(47, 21);
             this.attributeNameField.Name = "attributeNameField";
-            this.attributeNameField.Size = new System.Drawing.Size(173, 20);
+            this.attributeNameField.Size = new System.Drawing.Size(191, 20);
             this.attributeNameField.TabIndex = 0;
             this.attributeNameField.TextChanged += new System.EventHandler(this.attributeNameField_TextChanged);
             // 
@@ -187,7 +187,7 @@
             "Flood Fill"});
             this.brushSelection.Location = new System.Drawing.Point(128, 10);
             this.brushSelection.Name = "brushSelection";
-            this.brushSelection.Size = new System.Drawing.Size(129, 21);
+            this.brushSelection.Size = new System.Drawing.Size(157, 21);
             this.brushSelection.TabIndex = 0;
             this.brushSelection.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -198,9 +198,10 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(781, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -276,7 +277,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 443);
+            this.ClientSize = new System.Drawing.Size(944, 542);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
